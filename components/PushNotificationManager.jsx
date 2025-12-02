@@ -20,6 +20,7 @@ function urlBase64ToUint8Array(base64String) {
 const PushNotificationManager = () => {
   const [isSupported, setIsSupported] = useState(false);
   const [subscription, setSubscription] = useState(null);
+  const [message, setMessage] = useState('');
   useEffect(() => {
     if ("serviceWorker" in navigator && "PushManager" in window) {
       setIsSupported(true);
